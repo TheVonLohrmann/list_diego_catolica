@@ -32,8 +32,19 @@ void ex1(){
 					printf("|_______________________________________________________|\n");
 					printf("|digite sua senha: ");
 					scanf("%d", &severif);	
+				
+					if(senha==severif){
+							
+							system("cls");
+			                printf("|_______________________________________________________|\n");
+			                printf("|                  Acesso Autorizado!                   |\n");
+			                printf("|                     Boa compra!                       |\n");
+			                printf("|_______________________________________________________|\n");
+			                break;
+			                
+				        }
 					
-						}	
+			    	}	
 					
 				} if(i==3){
 					printf("|_______________________________________________________|\n");
@@ -103,20 +114,23 @@ void ex2(){
 void ex3(struct infofami *pt){
 	
 system ("cls");
-	int contfami, i=0 ;
+	int contfami, i=-1 ;
 	
 	do{
+		i++;
 		printf("|_______________________________________________________| \n");
 		printf("|Informacao da %d familia:\n", i+1);
 		printf("|Digite o salario da familia:");
 		fflush(stdin);
-	    getch((pt[i]).salario,stdin);
+		scanf("%f", &(pt[i].salario));
+	    //getch((pt[i]).salario,stdin);
         printf("|Digite o numero de filhos da familia:");
         fflush(stdin);
-        getch((pt[i]).crian);
-        i++;
+        scanf("%d", &(pt[i].crian));
+        //getch((pt[i]).crian);
+       
         printf("\n");
-        }while((pt[i]).salario<0);
+        }while((pt[i]).salario>=0);
         
         contfami = i;
         float salarioMed=0;
